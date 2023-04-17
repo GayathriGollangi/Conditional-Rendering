@@ -3,7 +3,7 @@ import './App.css'
 import Welcome from './components/Welcome'
 
 class App extends Component {
-  state = {isLoggedIn: true}
+  state = {isLoggedIn: false}
 
   render() {
     const {isLoggedIn} = this.state
@@ -11,7 +11,8 @@ class App extends Component {
     return (
       <div className="container">
         <Welcome greeting="Hello" name="User" />
-        {isLoggedIn ? <button>Logout</button> : <button>Login</button>}
+        {isLoggedIn && <button>Logout</button>}
+        {!isLoggedIn && <button>Login</button>}
       </div>
     )
   }
